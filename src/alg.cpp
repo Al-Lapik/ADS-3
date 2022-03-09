@@ -7,9 +7,11 @@ int cbinsearch(int *arr, int size, int value) {
     if (*(arr + mid) == value) {
       count++;
       break;
-    } else if (*(arr + mid) < value)
-      low = mid + 1;
-    else high = mid - 1;
+    } else
+        if (*(arr + mid) < value)
+          low = mid + 1;
+    else
+      high = mid - 1;
   }
   if (count != 0) {
     for (int i = mid + 1; *(arr + i) == value; i++)
